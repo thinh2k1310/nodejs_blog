@@ -7,6 +7,9 @@ const app = express();
 const methodOverride = require('method-override');
 const route = require('./routes');
 const db = require('./config/db');
+const { JSDOM } = require( "jsdom" );
+const { window } = new JSDOM( "" );
+const $ = require( "jquery" )( window );
 
 //Connect DB
 db.connect();

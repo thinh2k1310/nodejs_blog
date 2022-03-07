@@ -2,7 +2,7 @@ const req = require("express/lib/request");
 const res = require("express/lib/response");
 const { mongooseToObject } = require("../../util/mongoose");
 const Course = require("../models/Course");
-const {multipleMongooseToObject} = require('../../util/mongoose')
+const {mutipleMongooseToObject} = require('../../util/mongoose')
 
 class SiteController{
     
@@ -12,7 +12,7 @@ class SiteController{
         Course.find({})
             .then(courses => {
                 res.render('home',{
-                    courses : multipleMongooseToObject(courses)
+                    courses : mutipleMongooseToObject(courses)
                 });
             })
             .catch(next);
